@@ -28,7 +28,7 @@
             <h3>PHP developer (Laravel + REST API)</h3>
             <h1>REST API microservice</h1>
             <h2>Laravel/Lumen Articles Project</h2>
-            <br />    
+            <br />   
             <hr />
             <a href="#">Documentation</a>
         </div>  
