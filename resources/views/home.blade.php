@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-        <title>Home | Lumen Chat Bot</title>
+        <title>Home | Lumen Article Project</title>
 
         <style>
             .frame{
@@ -25,9 +25,9 @@
     </head>
     <body>
         <div class="frame">
-            <h3>Test task for PHP developer (Laravel + REST API)</h3>
-            <h1>Communications Microservice</h1>
-            <h2>(Telegram channel)</h2>
+            <h3>PHP developer (Laravel + REST API)</h3>
+            <h1>REST API microservice</h1>
+            <h2>Laravel/Lumen Articles Project</h2>
             <br />    
             <hr />
             <a href="#">Documentation</a>
