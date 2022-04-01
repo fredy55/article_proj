@@ -2,20 +2,155 @@
     "openapi": "3.0.0",
     "info": {
         "title": "REST API microservice",
+        "description": "REST API microservice test prject",
         "contact": {
             "name": "Onuora Alfred",
-            "url": "https://github.com",
+            "url": "https://github.com/fredy55/article_proj",
             "email": "alfredonuora@yahoo.com"
         },
-        "version": "2.0.1"
+        "version": "3.0.1"
     },
     "paths": {
-        "https://github.com/fredy55/article_proj.git": {},
+        "http://127.0.0.1:8000/api/v1": {},
         "/articles": {
             "get": {
+                "summary": "Return list of articles, 10 per page",
+                "operationId": "d06fd412c87b16023faae11f9f51a828",
                 "responses": {
-                    "default": {
-                        "description": "the request was ok"
+                    "200": {
+                        "description": "Successful Operation."
+                    },
+                    "404": {
+                        "description": "No article found."
+                    }
+                }
+            }
+        },
+        "/articles/{id}": {
+            "get": {
+                "summary": "Return a single Article",
+                "operationId": "e5ab3b5f28243b8a7a472371cb65f271",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Article description used to find a single article",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation."
+                    },
+                    "404": {
+                        "description": "Article NOT found."
+                    }
+                }
+            }
+        },
+        "/articles/{id}/comment": {
+            "post": {
+                "summary": "Return a single Article",
+                "operationId": "cfe5dc32b3b6f5b7065d294640baa972",
+                "parameters": [
+                    {
+                        "name": "article_id",
+                        "in": "path",
+                        "description": "Article description used to find a single article",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    },
+                    {
+                        "name": "subject",
+                        "in": "query",
+                        "description": "Subject for an article comment",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "description": "Body for an article comment",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation."
+                    },
+                    "401": {
+                        "description": "Invalid input field."
+                    },
+                    "500": {
+                        "description": "Error occured."
+                    }
+                }
+            }
+        },
+        "/articles/{id}/like": {
+            "get": {
+                "summary": "Return a single Article likes count",
+                "operationId": "4e778895ad6298f4fca84a5d9fe698b8",
+                "parameters": [
+                    {
+                        "name": "article id",
+                        "in": "path",
+                        "description": "Description used to create likes for a single article",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation."
+                    },
+                    "500": {
+                        "description": "Article likes NOT found."
+                    }
+                }
+            }
+        },
+        "/articles/{id}/view": {
+            "get": {
+                "summary": "Return a single Article view count",
+                "operationId": "7d7fd2419b6369e6e04e0b3c9066a740",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Description used to count a single article views",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64",
+                            "minimum": 1
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation."
+                    },
+                    "500": {
+                        "description": "Article NOT found."
                     }
                 }
             }

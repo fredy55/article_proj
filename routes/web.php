@@ -16,7 +16,7 @@ $router->get('/', function() {
     return view('home');
 });
 
-
+// ============ ARTICLES ENDPOINT  ===================//
 $router->group(['prefix' => 'api/v1'], function()use ($router) {
     $router->get('/articles',  'ArticlesController@allArticles'); //Url article directory
     $router->get('/articles/{id}',  'ArticlesController@singleArticle'); //Url article full text
